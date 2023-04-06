@@ -1,7 +1,6 @@
 const baseUrl = 'https://pokeapi.co/api/v2/pokemon';
 let pokemons = [];
 
-// Function to fetch data from the API
 async function fetchData() {
     try {
         const response = await fetch(`${baseUrl}?limit=151`);
@@ -30,7 +29,7 @@ async function fetchData() {
 }
 
 
-// Function to render the table with Pokemon data
+
 function renderTable(pokemons) {
     const tableBody = document.getElementById('tableBody');
     tableBody.innerHTML = '';
@@ -66,7 +65,7 @@ function addTableRowClickEvent() {
 }
 
 
-// Function to filter Pokemon by name
+
 function filterPokemonByName(name) {
     const filteredPokemons = pokemons.filter((pokemon) =>
         pokemon.name.toLowerCase().includes(name.toLowerCase())
@@ -74,7 +73,7 @@ function filterPokemonByName(name) {
     renderTable(filteredPokemons);
 }
 
-// Event listeners for search input and sort button
+
 const searchInput = document.getElementById('searchInput');
 searchInput.addEventListener('input', (event) => {
     const searchValue = event.target.value;
@@ -93,5 +92,5 @@ sortBtn.addEventListener('click', () => {
     renderTable(pokemons);
 });
 
-// Fetch data from API and render the table
+
 fetchData();
